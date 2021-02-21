@@ -17,16 +17,18 @@
     </thead>
     <tbody>
       <% articles.forEach(article => { %>
-        <th><%= article.id %></th>
-        <th><%= article.title %></th>
-        <th><%= article.slug %></th>
-        <th><%= article.category.title %></th>
-        <th>
-          <form action="/articles/delete" method="POST" style="display: inline;" onsubmit="confirmDelete(event, this)">
-            <input type="hidden" name="id" value="<%= article.id %>">
-            <button class="btn btn-danger">Excluir</button>
-          </form>
-        </th>
+        <tr>
+          <th><%= article.id %></th>
+          <th><%= article.title %></th>
+          <th><%= article.slug %></th>
+          <th><%= article.category.title %></th>
+          <th>
+            <form action="/articles/delete" method="POST" style="display: inline;" onsubmit="confirmDelete(event, this)">
+              <input type="hidden" name="id" value="<%= article.id %>">
+              <button class="btn btn-danger">Excluir</button>
+            </form>
+          </th>
+        </tr>
       <% }) %>
     </tbody>
   </table>
